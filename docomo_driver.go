@@ -11,12 +11,11 @@ type DocomoDriver struct {
 type DocomoInterface interface {
 }
 
-func NewDocomoDriver(a *DocomoAdaptor, name string) *DocomoDriver {
+func NewDocomoDriver(name string) *DocomoDriver {
 	return &DocomoDriver{
 		Driver: *gobot.NewDriver(
 			name,
 			"docomo.DocomoDriver",
-			a,
 		),
 	}
 }
@@ -25,5 +24,10 @@ func (d *DocomoDriver) adaptor() *DocomoAdaptor {
 	return d.Driver.Adaptor().(*DocomoAdaptor)
 }
 
-func (d *DocomoDriver) Start() bool { return true }
-func (d *DocomoDriver) Halt() bool  { return true }
+func (d *DocomoDriver) Start() bool {
+  return true
+}
+
+func (d *DocomoDriver) Halt() bool  {
+  return true
+}
