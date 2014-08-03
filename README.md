@@ -1,4 +1,4 @@
-# docomo
+# Docomo for Gobot
 
 Gobot (http://gobot.io/) is a framework for robotics and physical computing using Go
 
@@ -9,7 +9,7 @@ https://github.com/hybridgroup/gobot
 
 ## Installing
 
-    go get path/to/repo/docomo
+    go get karota-project/gobot-docomo
 
 ## Using
 
@@ -21,4 +21,4 @@ Explain how to connect from the computer to the device here...
 
 ## License
 
-Copyright (c) 2014 Your Name Here. See LICENSE for more details
+Copyright (c) 2014 karota. See LICENSE for more details
