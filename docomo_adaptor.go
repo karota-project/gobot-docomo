@@ -1,26 +1,26 @@
 package docomo
 
 import (
-  "github.com/hybridgroup/gobot"
+	"github.com/hybridgroup/gobot"
 )
 
 type DocomoAdaptor struct {
-  gobot.Adaptor
+	gobot.Adaptor
 }
 
 func NewDocomoAdaptor(name string) *DocomoAdaptor {
-  return &DocomoAdaptor{
-    Adaptor: *gobot.NewAdaptor(
-      name,
-      "docomo.DocomoAdaptor",
-    ),
-  }
+	return &DocomoAdaptor{
+		Adaptor: *gobot.NewAdaptor(
+			name,
+			"docomo.DocomoAdaptor",
+		),
+	}
 }
 
 func (d *DocomoAdaptor) Connect() bool {
-  return true
+	return true
 }
 
 func (d *DocomoAdaptor) Finalize() bool {
-  return true
+	return true
 }
