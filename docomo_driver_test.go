@@ -6,7 +6,7 @@ import (
 )
 
 func initTestDocomoDriver() *DocomoDriver {
-	return NewDocomoDriver(NewDocomoAdaptor("myAdaptor"), "myDriver")
+	return NewDocomoDriver(NewDocomoAdaptor("myAdaptor", "api key"), "myDriver")
 }
 
 func TestDocomoDriverStart(t *testing.T) {

@@ -6,14 +6,16 @@ import (
 
 type DocomoAdaptor struct {
 	gobot.Adaptor
+	ApiKey string
 }
 
-func NewDocomoAdaptor(name string) *DocomoAdaptor {
+func NewDocomoAdaptor(name string, apiKey string) *DocomoAdaptor {
 	return &DocomoAdaptor{
 		Adaptor: *gobot.NewAdaptor(
 			name,
 			"docomo.DocomoAdaptor",
 		),
+		ApiKey: apiKey,
 	}
 }
 

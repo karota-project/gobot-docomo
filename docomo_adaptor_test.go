@@ -6,7 +6,7 @@ import (
 )
 
 func initTestDocomoAdaptor() *DocomoAdaptor {
-	return NewDocomoAdaptor("myAdaptor")
+	return NewDocomoAdaptor("myAdaptor", "api key")
 }
 
 func TestDocomoAdaptorConnect(t *testing.T) {
