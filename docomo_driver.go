@@ -40,26 +40,28 @@ func (d *DocomoDriver) Halt() bool {
 	return true
 }
 
-func (d *DocomoDriver) POST(message string) {
+func (d *DocomoDriver) POST(req map[string]string) {
 
+	// use TLS
 	tr := &http.Transport{
 		TLSClientConfig:    &tls.Config{InsecureSkipVerify: true},
 		DisableCompression: true,
 	}
 	client := &http.Client{Transport: tr}
 
-	s := []string{"{\"utt\": ", message, "\"context\": ", "\"53e816d98b3b3\",",
-		"\"nickname\": ", "\"光\",",
-		"\"nickname_y\": ", "\"ヒカリ\",",
-		"\"sex\": ", "\"女\",",
-		"\"bloodtype\": ", "\"B\",",
-		"\"birthdateY\": ", "\"1997\",",
-		"\"birthdateM\": ", "\"5\",",
-		"\"birthdateD\": ", "\"30\",",
-		"\"age\": ", "\"16\",",
-		"\"constellations\": ", "\"双子座\",",
-		"\"place\": ", "\"東京\",",
-		"\"mode\": ", "\"dialog\"}"}
+	s := []string{"{\"utt\": \"", req["utt"],
+		"\", \"context\": \"", req["context"],
+		"\", \"nickname\": \"", req["nickname"],
+		"\", \"nickname_y\": \"", req["nickname_y"],
+		"\", \"sex\": \"", req["sex"],
+		"\", \"bloodtype\": \"", req["bloodtype"],
+		"\", \"birthdateY\": \"", req["birthdateY"],
+		"\", \"birthdateM\": \"", req["birthdateM"],
+		"\", \"birthdateD\": \"", req["birthdateD"],
+		"\", \"age\": \"", req["age"],
+		"\", \"constellations\": \"", req["constellations"],
+		"\", \"place\": \"", req["place"],
+		"\", \"mode\": \"", req["mode"], "\"}"}
 
 	json := strings.Join(s, "")
 
